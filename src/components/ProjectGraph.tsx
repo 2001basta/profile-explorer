@@ -221,7 +221,7 @@ export const ProjectGraph = ({
     return () => {
       network.destroy();
     };
-  }, [getFilteredData, onSelectProject, selectedProject]);
+  }, [getFilteredData, onSelectProject]);
 
   // Highlight selected project
   useEffect(() => {
