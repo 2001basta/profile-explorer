@@ -142,7 +142,7 @@ export const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
         transition={{ type: "spring", damping: 25, stiffness: 300 }}
         className="fixed right-0 top-0 bottom-0 w-full max-w-md z-50"
       >
-        <div className="h-full glass-panel border-l shadow-2xl overflow-hidden flex flex-col">
+        <div className="glass-panel border-l shadow-2xl overflow-hidden flex flex-col">
           {/* Header */}
           <div className="p-6 border-b border-border/50">
             <div className="flex items-start justify-between">

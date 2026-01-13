@@ -68,6 +68,7 @@ export default {
           python: "hsl(var(--tech-python))",
           algorithms: "hsl(var(--tech-algorithms))",
           devops: "hsl(var(--tech-devops))",
+          java: "hsl(var(--tech-java))",
           default: "hsl(var(--tech-default))",
         },
         node: {
