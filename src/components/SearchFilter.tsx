@@ -35,6 +35,58 @@ const getCategoryStyles = (category: Category, isActive: boolean) => {
       active: "bg-tech-devops/20 text-tech-devops border-tech-devops/50",
       inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-tech-devops/30 hover:text-tech-devops",
     },
+    java: {
+      active: "bg-blue-500/20 text-blue-400 border-blue-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-blue-500/30 hover:text-blue-400",
+    },
+    sh: {
+      active: "bg-green-500/20 text-green-400 border-green-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-green-500/30 hover:text-green-400",
+    },
+    sql: {
+      active: "bg-orange-500/20 text-orange-400 border-orange-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-orange-500/30 hover:text-orange-400",
+    },
+    html: {
+      active: "bg-orange-600/20 text-orange-400 border-orange-600/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-orange-600/30 hover:text-orange-400",
+    },
+    css: {
+      active: "bg-blue-600/20 text-blue-400 border-blue-600/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-blue-600/30 hover:text-blue-400",
+    },
+    docker: {
+      active: "bg-sky-500/20 text-sky-400 border-sky-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-sky-500/30 hover:text-sky-400",
+    },
+    frontend: {
+      active: "bg-pink-500/20 text-pink-400 border-pink-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-pink-500/30 hover:text-pink-400",
+    },
+    backend: {
+      active: "bg-indigo-500/20 text-indigo-400 border-indigo-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-indigo-500/30 hover:text-indigo-400",
+    },
+    game: {
+      active: "bg-yellow-500/20 text-yellow-400 border-yellow-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-yellow-500/30 hover:text-yellow-400",
+    },
+    auth: {
+      active: "bg-purple-600/20 text-purple-400 border-purple-600/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-purple-600/30 hover:text-purple-400",
+    },
+    ui: {
+      active: "bg-amber-500/20 text-amber-400 border-amber-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-amber-500/30 hover:text-amber-400",
+    },
+    ux: {
+      active: "bg-amber-500/20 text-amber-400 border-amber-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-amber-500/30 hover:text-amber-400",
+    },
+    unix: {
+      active: "bg-amber-500/20 text-amber-400 border-amber-500/50",
+      inactive: "bg-secondary/50 text-muted-foreground border-border hover:border-amber-500/30 hover:text-amber-400",
+    },
   };
 
   return isActive ? baseStyles[category].active : baseStyles[category].inactive;

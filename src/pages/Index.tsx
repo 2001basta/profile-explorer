@@ -14,7 +14,7 @@ const Index = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const isMobile = useIsMobile();
 
-  const handleCategoryToggle = useCallback((category: Category) => {
+  const handleCategoryToggle = useCallback((category: Category) => {    
     setActiveCategories((prev) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)

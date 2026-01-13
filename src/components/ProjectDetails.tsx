@@ -25,7 +25,7 @@ export const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
   const isMobile = useIsMobile();
 
   if (!project) return null;
-
+  
   const categoryColor = getCategoryColor(project.category);
 
   // Mobile: Bottom drawer

@@ -24,6 +24,7 @@ export const ProjectGraph = ({
   onSelectProject,
   selectedProject,
 }: ProjectGraphProps) => {
+
   const containerRef = useRef<HTMLDivElement>(null);
   const networkRef = useRef<Network | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
@@ -80,11 +81,11 @@ export const ProjectGraph = ({
         shape: node.type === "project" ? "dot" : "diamond",
         size: node.type === "project" ? 25 : 15,
         color: {
-          background: node.type === "project" 
-            ? getCategoryColor(node.category!) 
+          background: node.type === "project"
+            ? getCategoryColor(node.category!)
             : getCategoryColor(node.category!) + "80",
-          border: node.type === "project" 
-            ? getCategoryColor(node.category!) 
+          border: node.type === "project"
+            ? getCategoryColor(node.category!)
             : getCategoryColor(node.category!),
           highlight: {
             background: getCategoryColor(node.category!),
@@ -135,11 +136,13 @@ export const ProjectGraph = ({
   }, [searchQuery, activeCategories]);
 
   useEffect(() => {
+
     if (!containerRef.current) return;
 
     const data = getFilteredData();
 
     const options: Options = {
+      autoResize: true,
       nodes: {
         shape: "dot",
         scaling: {
@@ -192,6 +195,7 @@ export const ProjectGraph = ({
       if (params.nodes.length > 0) {
         const nodeId = params.nodes[0] as string;
         if (!nodeId.startsWith("tag-")) {
+
           const project = projects.find((p) => p.id === nodeId);
           if (project) {
             onSelectProject(project);
@@ -203,15 +207,21 @@ export const ProjectGraph = ({
     });
 
     network.on("hoverNode", (params) => {
+      if (!params) return;
+      console.log("hoverNode", params);
+
       setHoveredNode(params.node as string);
       const connectedNodes = network.getConnectedNodes(params.node);
       const connectedEdges = network.getConnectedEdges(params.node);
-      
+
       // Highlight connected nodes and edges
       network.selectNodes([params.node, ...connectedNodes] as string[]);
     });
 
     network.on("blurNode", () => {
+
+      console.log("blurNode");
+
       setHoveredNode(null);
       if (!selectedProject) {
         network.unselectAll();
@@ -225,6 +235,7 @@ export const ProjectGraph = ({
 
   // Highlight selected project
   useEffect(() => {
+
     if (networkRef.current && selectedProject) {
       networkRef.current.selectNodes([selectedProject.id]);
       networkRef.current.focus(selectedProject.id, {
@@ -240,7 +251,8 @@ export const ProjectGraph = ({
   return (
     <div
       ref={containerRef}
-      className="w-full h-full min-h-[400px] rounded-lg bg-gradient-to-br from-background via-card to-background"
+      className="w-full h-[100vh] min-h-[400px] rounded-lg bg-gradient-to-br from-background via-card to-background"
     />
+
   );
 };
