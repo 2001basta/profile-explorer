@@ -170,7 +170,7 @@ export const ProjectDetails = ({ project, onClose }: ProjectDetailsProps) => {
           </div>
 
           {/* Content */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          <div className="max-h-screen overflow-y-auto p-6 space-y-6 scrollbar">
             <p className="text-muted-foreground leading-relaxed">
               {project.description}
             </p>

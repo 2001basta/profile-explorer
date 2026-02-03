@@ -251,7 +251,7 @@ export const ProjectGraph = ({
   return (
     <div
       ref={containerRef}
-      className="w-full h-[100vh] min-h-[400px] rounded-lg bg-gradient-to-br from-background via-card to-background"
+      className="w-full h-[100vh] min-h-[400px] rounded-lg bg-gradient-to-br from-background via-card to-background overflow-auto"
     />
 
   );
